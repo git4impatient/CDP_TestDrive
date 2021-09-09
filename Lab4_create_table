@@ -1,0 +1,42 @@
+create external table if not exists YOURNAMEHERE_telcochurn (
+customerid string,
+gender string,
+seniorcitizen string,
+partner string,
+dependents string,
+tenure int,
+phoneservice string,
+multiplelines string,
+internetservice string,
+onlinesecurity string,
+onlinebackup string,
+deviceprotection string,
+techsupport string,
+streamingtv string,
+streamingmovies string,
+contract string,
+paperlessbilling string,
+paymentmethod string,
+monthlycharges decimal(10,2),
+totalcharges decimal(10,2),
+churn int
+)
+row format delimited fields terminated by ','
+stored as textfile
+location 's3a://prod-cdptrialuser43-trycdp-com/cdp-lake/data/cdpvw2/telcochurn'
+;
+
+select * from yournamehere_telcochurn;
+select sum(totalcharges) from yournamehere_telcochurn;
+
+create external table if not exists YOURNAMEHERE_telcochurn_onecol (
+myonecolumn string
+)
+row format delimited fields terminated by '^'
+stored as textfile
+location  's3a://prod-cdptrialuser43-trycdp-com/cdp-lake/data/cdpvw2/telcochurn'
+;
+select * from yournamehere_telcochurn_onecol;
+select * from yournamehere_telcochurn_onecol
+where myonecolumn like "%Mailed%";
+

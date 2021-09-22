@@ -1,5 +1,7 @@
 # get the file, make directories, put the file into the directories
+#  you do not need to run the curl statement, the file is included in this git project
 # curl https://raw.githubusercontent.com/andy-hansen/cdp/master/cml/raw/WA_Fn-UseC_-Telco-Customer-Churn-.csv > WA_Fn-UseC_-Telco-Customer-Churn-.csv
+# 
 hadoop fs -mkdir s3a://prod-cdptrialuser27-trycdp-com/cdp-lake/data/cdpvw1/telcochurn
 hadoop fs -mkdir s3a://prod-cdptrialuser27-trycdp-com/cdp-lake/data/cdpvw2/telcochurn
 hadoop fs -mkdir s3a://prod-cdptrialuser27-trycdp-com/cdp-lake/data/cdpvw3/telcochurn
